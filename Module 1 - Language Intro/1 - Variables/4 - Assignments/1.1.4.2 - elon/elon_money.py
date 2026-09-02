@@ -16,7 +16,7 @@ Note that Elon's capital will be $33B.
 #unit of measurement is in billions of dollars
 
 # final answer for 10-year
-ten_year_final = 44 * (1 + (3.96 / 100)) ** 10
+ten_year_final = 33 * (1 + (3.96 / 100)) ** 10
 
 # final answer for 20-year
-twenty_year_final =44*(1+(4.32/100))**20
+twenty_year_final =33 * ( 1 + (4.32 / 100)) ** 20
