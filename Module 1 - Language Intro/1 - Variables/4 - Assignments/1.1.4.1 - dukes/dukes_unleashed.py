@@ -14,6 +14,11 @@ Note: this problem does not require the "compounding interest" formula from the 
 
 ### Your code here ###
 
-in_state_gift = 0
+# 5% of the donation must be the cost per year. therefore cost = g*0.05 , cost/0.05 =g
 
-out_state_gift = 0
+in_state_gift = 30792/0.05
+
+out_state_gift = 47882/0.05
+
+print("In-state gift: ", in_state_gift)
+print("Out-of-state gift: ", out_state_gift)
