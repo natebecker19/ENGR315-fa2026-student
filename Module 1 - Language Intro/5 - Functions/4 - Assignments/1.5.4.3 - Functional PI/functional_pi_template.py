@@ -10,12 +10,29 @@ def my_pi(target_error):
     """
 
     ### YOUR CODE HERE ###
+    pi = 0
+    er = abs(pi - math.pi)
+
+    a = 1
+    b = 2 ** (-0.5)
+    t = 1/4
+    p = 1
+
+    while er > target_error:
+        # calculate a step of pi
+        aprev = a
+        pprev = p
+        a = (a+b)/2
+        b = math.sqrt(aprev * b)
+        p = 2 * p
+        t = t - pprev * math.pow(a - aprev,2)
+
+        pi = ((a + b)**2) / (4 * t)
+        er = abs(pi - math.pi)
+
 
     # change this so an actual value is returned
-    return 0
-
-
-
+    return pi
 
 desired_error = 1E-10
 
