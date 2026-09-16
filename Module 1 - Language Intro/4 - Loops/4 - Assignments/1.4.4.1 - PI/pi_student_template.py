@@ -15,7 +15,7 @@ Step 1: Declare and initialize all the values for the Gauss-Legendre algorithm
 
 # modify these lines to correct set the variable values
 a = 1
-b = 1 / math.sqrt(2)
+b = 2 ** (-0.5)
 t = 1/4
 p = 1
 
@@ -29,13 +29,14 @@ for i in range(1, 10):
 
     ### YOUR CODE HERE ###
     aprev = a
+    pprev = p
     a = (a+b)/2
 
-    b = math.sqrt(a*b)
+    b = math.sqrt(aprev * b)
 
     p = 2 * p
 
-    t = t - p * math.pow(a - aprev,2)
+    t = t - pprev * math.pow(a - aprev,2)
 
     # print out the current loop iteration. This is present to have something in the loop.
     print("Loop Iteration: ", i)
