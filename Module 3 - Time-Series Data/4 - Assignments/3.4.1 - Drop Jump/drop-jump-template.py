@@ -49,7 +49,7 @@ def main(full_path_to_file):
     # given some acceptable delta
 
     # when the signal exceeds the baseline plus delta, that is the landing point
-    delta = 5
+    delta = 15
 
     # make a variable to hold the INDEX of that landing point. We will later convert that
     # index to time based upon the force plate sample rate
@@ -77,7 +77,7 @@ def main(full_path_to_file):
     # Consider this the take off point.
 
     # when the signal falls below the baseline plus delta, that is the take off point
-    delta = 5
+    delta = 15
 
     # make a variable to hold the INDEX of that take-off point. We will later convert that
     # index to time based upon the force plate sample rate
@@ -92,7 +92,7 @@ def main(full_path_to_file):
     for index in range(first_landing_index + 10, len(force_plate_list)):
 
         value = force_plate_list[index]
-        if value <= baseline + delta or value >= baseline - delta:
+        if value <= baseline + delta:
             take_off_index = index
 
             break
@@ -103,7 +103,7 @@ def main(full_path_to_file):
     # This code block should be the same (functionally) as Step 2 but starting at a different point
 
     # when the signal falls above the baseline plus delta, that is the take off point
-    delta = 5
+    delta = 15
 
     # variable to hold the index for the second landing
     second_landing_index = -1
@@ -152,8 +152,13 @@ if __name__ == "__main__":
     filename = "FP1.txt"
 
     # load force plate data (this path may change based upon where you place this file in your project)
-    path_to_data_folder = "../../../data/drop-jump/force-plate/"
-
+    path_to_data_folder = "./data/drop-jump/force-plate/"
+    
+    #OG
+    #path_to_data_folder = "../../../data/drop-jump/force-plate/"
+    
+    #C:\Users\nateb\OneDrive\Documents\GitHub\ENGR315-fa2026-student\data\drop-jump\force-plate\FP1.txt
+    #data\drop-jump\force-plate\FP1.txt
     ### Do not modify below this line ###
 
     # put together directory and file to make a single relative path
